@@ -30,7 +30,7 @@
               <ul class="dropdown-menu" aria-labelledby="download">
 
                 {% for category in categories %}
-                <li><a href="#">{{ category }}</a></li>
+                <li><a href="{% url 'catalog:category' category_name=category.name %}">{{ category }}</a></li>
                 {% endfor %}
               </ul>
             </li>
