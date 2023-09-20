@@ -17,9 +17,13 @@ def category(request, category_name):
 
 
 
-
-
 def product_list(request):
     products = Product.objects.all() 
 
     return render(request, 'catalog/product_list.html',{"products": products} )
+
+
+
+def produtos_unitario(request, produto_id):
+    produto = get_object_or_404(Product, pk=produto_id)
+    return render(request, 'catalog/product.html', {"produto": produto} )
