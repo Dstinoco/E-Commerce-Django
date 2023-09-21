@@ -10,5 +10,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('contato/', contact, name='contato'),
-    path('', include('catalog.urls', namespace="catalog-")),
+    path('', include('catalog.urls')),
 ]
