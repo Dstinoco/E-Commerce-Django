@@ -9,7 +9,7 @@
     <h1>Produtos</h1>
 </div>
 <div class="row">
-    {% for product in products %}
+    {% for product in product_list %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <a href="{% url 'produto_unitario' product.slug %}">
@@ -27,4 +27,22 @@
 
     
 </div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      {% for page in paginator.page_range %}
+      <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+      {% endfor %}
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 {% endblock %}
